@@ -10,6 +10,7 @@ words = [
   "lista",
 ]
 word = random.choice(words)
+letras_validas = "abcdefghijklmnopqrstuvwkxyz"
 guessed = []
 attempts = 6
 print("¡Bienvenido al Ahorcado!")
@@ -30,7 +31,10 @@ while attempts > 0:
   print(f"Intentos restantes: {attempts}")
   print(f"Letras usadas: {', '.join(guessed)}")
   letter = input("Ingresá una letra: ")
-  if letter in guessed:
+  if len(letter) != 1 or letter not in letras_validas:
+    print("Entrada no valida")
+    continue
+  elif letter in guessed:
     print("Ya usaste esa letra.")
   elif letter in word:
     guessed.append(letter)
