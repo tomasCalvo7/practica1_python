@@ -2,7 +2,6 @@ import random
 words = {"lenguaje":["python"],
          "datos":["variable","entero","cadena"],
          "modulo":["lista","funcion","bucle","programa"]}
-puntaje = 0
 letras_validas = "abcdefghijklmnopqrstuvwkxyz"
 print("¡Bienvenido al Ahorcado!")
 print()
@@ -13,6 +12,7 @@ eligio = input("seleccione una categoria ").lower()
 palabras = random.sample(words[eligio],k = len(words[eligio]))   
 for rondas in palabras : 
   word = rondas
+  puntaje = 0    # reinicio el puntaje por ronda
   guessed = []   #reinicio el contador de palabras en cada ronda
   attempts = 6   #reinicio los intentos por palabra de cada ronda
   print("Nueva ronda")
